@@ -14,7 +14,9 @@ export const FigurineInformationsProvider = ({ children }) => {
   };
 
   return (
-    <FigurineInformations.Provider value={{ ...figurineData, setFigurineInfos }}>
+    // ici on passe les données et la fonction setFigurineInfos dans le contexte
+    <FigurineInformations.Provider value={{ ...figurineData, setFigurineInfos }}> 
+    {/* ici on passe les données et la fonction setFigurineInfos dans le contexte */}
       {children}
     </FigurineInformations.Provider>
   );

@@ -7,6 +7,7 @@ export const CardSoldier = () => {
 
   return (
     <div className="card-soldier">
+      
       <h1>Card Soldier</h1>
       {figurineInfos && (
         <div className="figurine-section">

@@ -7,6 +7,7 @@ import { FigurineInformationsProvider } from './context/StoreUnitInfo';
 
 function App() {
   return (
+    // ici on passe les données et la fonction setFigurineInfos dans le contexte
     <FigurineInformationsProvider>
       <div>
         <GetSoldier />
