@@ -1,14 +1,18 @@
 import './App.css'
 import GetSoldierInfo from './components/GetSoldier';
-import CardSoldier from './components/CardSoldier';
+import { useContext } from 'react';
+import UnitInfos from './context/StoreUnitInfo';
 
 function App() {
 
 
   return (
     <div>
-      <GetSoldierInfo/>
-      <CardSoldier/>
+          <UnitInfos.Provider value={{figurineInfos}}>
+         
+          </UnitInfos.Provider>
+      
+
       
     </div>
   )

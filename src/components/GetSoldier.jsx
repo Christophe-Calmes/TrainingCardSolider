@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
-import TrasmitContexts from './TrasmitContexts';
+import { useState, useEffect, useContext } from "react";
+import StoreUnitInfo from '../context/StoreUnitInfo';
+import CardSoldier from "./CardSoldier";
+
 
 const debug = false;
 export const GetSoldier = () => {
-
-
     const [unitInfos, setUnitInfo] = useState([]);
-
     useEffect(()=>{
         const fetchUnitInfo = async() => {
             const response = await fetch('https://apir5.graines1901.com/sources/APIpublic/oneFigurine.php?idFigurine=10');
@@ -16,7 +15,6 @@ export const GetSoldier = () => {
             } else {
                 return "Error";
             }
-    
         }
         fetchUnitInfo();
     }, [])
@@ -33,15 +31,12 @@ export const GetSoldier = () => {
         console.log(figurineInfos[0][0].idFigurine)
         console.log(RSInfos)
         console.log(equipementFigurineInfos)
+        
     }
 
 if(unitInfos.length >= 3) {
     return (
-    <TrasmitContexts
-        figurineInfos={figurineInfos[0][0]}
-        RSInfos={RSInfos[0][0]}
-        equipementFigurineInfos={equipementFigurineInfos[0][0]}
-    />
+        <div><p>**Datas load**</p></div>
        )
 } else {
     return (
