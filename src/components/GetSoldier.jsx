@@ -1,10 +1,8 @@
 import { useState, useEffect, useContext } from "react";
-import StoreUnitInfo from '../context/StoreUnitInfo';
-import CardSoldier from "./CardSoldier";
 
 
 const debug = false;
-export const GetSoldier = () => {
+export const GetSoldier = ({setDataUnit}) => {
     const [unitInfos, setUnitInfo] = useState([]);
     useEffect(()=>{
         const fetchUnitInfo = async() => {
@@ -19,19 +17,12 @@ export const GetSoldier = () => {
         fetchUnitInfo();
     }, [])
   
-    const figurineInfos = [];
-    const RSInfos = [];
-    const equipementFigurineInfos = [];
+
     if(unitInfos.length >= 3) {
-        figurineInfos.push(unitInfos[0]);
-        RSInfos.push(unitInfos[1]);
-        equipementFigurineInfos.push(unitInfos[2]);
+       setDataUnit(unitInfos);
     }
-    if(debug && unitInfos.length === 3) {
-        console.log(figurineInfos[0][0].idFigurine)
-        console.log(RSInfos)
-        console.log(equipementFigurineInfos)
-        
+    if(debug && unitInfos.length >= 3) {
+        console.log(unitInfos);
     }
 
 if(unitInfos.length >= 3) {

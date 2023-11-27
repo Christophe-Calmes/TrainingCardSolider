@@ -3,13 +3,15 @@ import StoreUnitInfos from '../context/StoreUnitInfo'
 
 export const CardSoldier = () => {
 
-const { FigurineInformations } = useContext(StoreUnitInfos)
-console.log(FigurineInformations);
+const { dataUnit } = useContext(StoreUnitInfos)
+console.log(dataUnit);
 
   return (
     <div>
       <h1>Card Soldier</h1>
-      
+        <article>
+       
+        </article>
     </div>
   );
 }
