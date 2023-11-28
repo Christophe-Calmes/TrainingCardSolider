@@ -32,4 +32,5 @@ export const GetSoldier = ({setDataUnit}) => {
 
   
 }
+
 export default GetSoldier;

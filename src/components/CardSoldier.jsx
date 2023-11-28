@@ -5,14 +5,14 @@ import './CardSoldier.scss';
 export const CardSoldier = () => {
 
 const { dataUnit } = useContext(StoreUnitInfos)
-//console.log(dataUnit[1][0].nomRS);
+//console.log(dataUnit[2][0]);
 const dice  = ['D6', 'D8', 'D10', 'D12'];
 const svg = ['Non applicable', '6+', '5+', '4+', '3+', '3++', '2+'];
 
 if(dataUnit.length >= 3) {
   return (
     <div>
-      <article className="itemBox">
+      <section className="itemBox">
         <h1 className="titleh1">Card Soldier</h1>
         
           <figure>
@@ -21,9 +21,9 @@ if(dataUnit.length >= 3) {
          <ul className="flexColomun">
           <li><h2>{dataUnit[0][0]?.nomUnivers}</h2></li>
           <li>Name : {dataUnit[0][0]?.nomFigurine}</li>
-          <li>Faction {dataUnit[0][0]?.nomFaction}</li>
+          <li>Faction : {dataUnit[0][0]?.nomFaction}</li>
       
-            <ul>
+            <ul className="flexColomun">
               <li>Combat dice : {dice[dataUnit[0][0]?.DC]}</li>
               <li>Martial quality dice : {dice[dataUnit[0][0]?.DQM]}</li>
               <li>Mouvement : {dataUnit[0][0]?.mouvement} pouces/ {Math.ceil(dataUnit[0][0]?.mouvement * 1.4)} pouces + 1D4 pouces </li>
@@ -34,19 +34,39 @@ if(dataUnit.length >= 3) {
          <p>
           {dataUnit[0][0]?.texteFigurine}
          </p>
+         <article>
+          {
+            dataUnit[2].length > 0 ? (
+            
+              <article>
+                <h3>Weapon</h3>
+                <ul>
+                {
+                  dataUnit[2].map((element, index) => {
+                    console.log(element)
+                  
+                  })
+                }
+                </ul>
+              </article>
+               
+            ) : (<p></p>)
+          }
+       
+         </article>
          <p>
           {dataUnit[1].length > 0 ? (
-              <ul>
-                <li><span>Special rules</span></li>
-                {dataUnit[1].map((element) => (   
-                  <li key={element?.nomRS}><span>{element?.nomRS}</span></li>
+              <ul className="flexColomun padding1">
+                <li><span className="titleSpan">Special rules</span></li>
+                {dataUnit[1].map((element, index) => (   
+                  <li className="specialRules" key={element?.nomRS}><span>{element?.nomRS}</span></li>
                 ))}
               </ul>
             ) : (
               <p>No special rules.</p>
             )}
          </p>
-        </article>
+        </section>
     </div>
   );
 } else {

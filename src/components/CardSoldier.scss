@@ -6,11 +6,13 @@
 .stylePicture {
     max-width: 75%;
 	height: auto;
+    border-radius: 10px;
+    border: rgb(167, 140, 20) 1px groove;
 }
 .itemBox {
     background-color: antiquewhite;
     border-radius: 10px;
-    border: rgb(20, 167, 160) 3px solid;
+    border: rgb(167, 140, 20) 3px groove;
 }
 .flexColomun {
     list-style: none;
@@ -18,4 +20,17 @@
     flex-direction: column;
     align-items: center;
     color: black;
+    align-items: flex-start;
+}
+.titleSpan {
+    font-size: larger;
+    font-weight: 400;
+    font-style: italic;
+}
+.padding1 {
+    padding-left: 6em;
+}
+.specialRules  {
+    list-style-type: disc;
+   
 }
