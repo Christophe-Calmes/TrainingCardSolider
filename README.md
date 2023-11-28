@@ -8,3 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 **Adress API : https://apir5.graines1901.com/sources/APIpublic/oneFigurine.php?idFigurine=10
+
+**Choosing SASS**
+
+I chose SASS technology to make each component independent in its CSS management, to increase the maintainability of projects.
