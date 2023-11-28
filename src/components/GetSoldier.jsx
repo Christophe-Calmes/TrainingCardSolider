@@ -25,15 +25,11 @@ export const GetSoldier = ({setDataUnit}) => {
         console.log(unitInfos);
     }
 
-if(unitInfos.length >= 3) {
+
     return (
-        <div><p>**Datas load**</p></div>
+        <div></div>
        )
-} else {
-    return (
-        <div><p>**Loading**</p></div>
-    )
-}
+
   
 }
 export default GetSoldier;

@@ -1,0 +1,21 @@
+
+.titleh1 {
+    font-size: 2em;
+    color: rgb(15, 62, 163);
+}
+.stylePicture {
+    max-width: 75%;
+	height: auto;
+}
+.itemBox {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    border: rgb(20, 167, 160) 3px solid;
+}
+.flexColomun {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}

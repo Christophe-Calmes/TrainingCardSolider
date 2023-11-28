@@ -6,7 +6,7 @@ import UnitInfos from './context/StoreUnitInfo';
 import CardSolider from './components/CardSoldier';
 function App() {
 const [dataUnit, setDataUnit] = useState([]);
-console.log(dataUnit[0]);
+//console.log(dataUnit[0][1]);
 
   return (
     <div>
