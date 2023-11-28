@@ -8,6 +8,7 @@ const { dataUnit } = useContext(StoreUnitInfos)
 //console.log(dataUnit[2][0]);
 const dice  = ['D6', 'D8', 'D10', 'D12'];
 const svg = ['Non applicable', '6+', '5+', '4+', '3+', '3++', '2+'];
+const typesWeapon = ['Close combat Weapon', 'Shooting','Explosive'];
 
 if(dataUnit.length >= 3) {
   return (
@@ -31,29 +32,28 @@ if(dataUnit.length >= 3) {
               <li>Armor : {svg[dataUnit[0][0]?.svg]}</li>
             </ul>
          </ul>
-         <p>
+         <p className="descriptionText">
           {dataUnit[0][0]?.texteFigurine}
-         </p>
-         <article>
-          {
-            dataUnit[2].length > 0 ? (
-            
-              <article>
-                <h3>Weapon</h3>
-                <ul>
-                {
-                  dataUnit[2].map((element, index) => {
-                    console.log(element)
-                  
-                  })
-                }
-                </ul>
-              </article>
-               
-            ) : (<p></p>)
-          }
-       
-         </article>
+         </p>   
+        {
+          dataUnit[2].length > 0 ? (
+            <article>
+              <h3 className="titleh1">Weapon</h3>
+              <ul className="flexColomun">
+                {dataUnit[2].map((elementWeapon) => (
+                  <li className="descriptionText"  key={elementWeapon?.nomArme}>
+                  {elementWeapon?.nomArme} -
+                  {elementWeapon?.puissance}{dice[dataUnit[0][0]?.DQM]} - Type : {typesWeapon[elementWeapon?.typeArme]}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ) : (
+            <p></p>
+          )
+        }
+
+    
          <p>
           {dataUnit[1].length > 0 ? (
               <ul className="flexColomun padding1">
